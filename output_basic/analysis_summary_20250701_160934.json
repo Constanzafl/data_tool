@@ -1,0 +1,25 @@
+{
+  "timestamp": "20250701_160934",
+  "database_type": "sqlite",
+  "stages": {
+    "extraction": {
+      "status": "completed",
+      "tables_found": 5,
+      "schema_file": "./output_basic\\schema_20250701_160934.json"
+    },
+    "detection": {
+      "status": "completed",
+      "relationships_found": 2,
+      "report_file": "./output_basic\\detection_report_20250701_160934.txt"
+    },
+    "verification": {
+      "status": "skipped",
+      "reason": "LLM not available"
+    },
+    "generation": {
+      "status": "completed",
+      "dbml_file": "./output_basic\\schema_20250701_160934.dbml",
+      "relationships_included": 3
+    }
+  }
+}

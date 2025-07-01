@@ -1,0 +1,15 @@
+================================================================================
+REPORTE DE RELACIONES DETECTADAS
+================================================================================
+
+🟡 CONFIANZA MEDIA (60-79%)
+----------------------------------------
+
+order_items.order_id → orders.id
+  Confianza: 60.0%
+
+order_items.product_id → products.id
+  Confianza: 60.0%
+
+
+Total de relaciones detectadas: 2

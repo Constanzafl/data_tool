@@ -1,0 +1,217 @@
+{
+  "customers": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": true,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "name",
+        "type": "VARCHAR(100)",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "email",
+        "type": "VARCHAR(100)",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      }
+    ],
+    "primary_keys": [
+      "id"
+    ],
+    "foreign_keys": {},
+    "row_count": 3
+  },
+  "products": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": true,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "name",
+        "type": "VARCHAR(100)",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "price",
+        "type": "DECIMAL(10,2)",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "category_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "stock",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      }
+    ],
+    "primary_keys": [
+      "id"
+    ],
+    "foreign_keys": {},
+    "row_count": 5
+  },
+  "categories": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": true,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "name",
+        "type": "VARCHAR(50)",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "description",
+        "type": "TEXT",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      }
+    ],
+    "primary_keys": [
+      "id"
+    ],
+    "foreign_keys": {},
+    "row_count": 3
+  },
+  "orders": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": true,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "customer_id",
+        "type": "INTEGER",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": true,
+        "foreign_key_ref": "customers.id"
+      },
+      {
+        "name": "order_date",
+        "type": "TIMESTAMP",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "total",
+        "type": "DECIMAL(10,2)",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      }
+    ],
+    "primary_keys": [
+      "id"
+    ],
+    "foreign_keys": {
+      "customer_id": "customers.id"
+    },
+    "row_count": 3
+  },
+  "order_items": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primary_key": true,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "order_id",
+        "type": "INTEGER",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "product_id",
+        "type": "INTEGER",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "quantity",
+        "type": "INTEGER",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      },
+      {
+        "name": "price",
+        "type": "DECIMAL(10,2)",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": false,
+        "foreign_key_ref": null
+      }
+    ],
+    "primary_keys": [
+      "id"
+    ],
+    "foreign_keys": {},
+    "row_count": 5
+  }
+}

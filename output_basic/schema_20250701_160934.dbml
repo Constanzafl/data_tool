@@ -1,0 +1,91 @@
+// Schema Analysis 20250701_160934
+// Generated with Python Schema Analyzer
+// https://dbdiagram.io/d
+
+Project "Schema Analysis 20250701_160934" {
+  database_type: 'PostgreSQL'
+  Note: 'Esquema de base de datos generado automáticamente'
+}
+
+Table customers {
+  id int [pk]
+  name varchar [not null]
+  email varchar [not null]
+  created_at timestamp [default: 'CURRENT_TIMESTAMP']
+
+  Indexes {
+    (id) [pk]
+  }
+
+  Note: '3 filas'
+}
+
+Table products {
+  id int [pk]
+  name varchar [not null]
+  price decimal [not null]
+  category_id int
+  stock int [default: '0']
+
+  Indexes {
+    (id) [pk]
+  }
+
+  Note: '5 filas'
+}
+
+Table categories {
+  id int [pk]
+  name varchar [not null]
+  description text
+
+  Indexes {
+    (id) [pk]
+  }
+
+  Note: '3 filas'
+}
+
+Table orders {
+  id int [pk]
+  customer_id int [not null, note: 'FK a customers.id']
+  order_date timestamp [default: 'CURRENT_TIMESTAMP']
+  total decimal
+
+  Indexes {
+    (id) [pk]
+  }
+
+  Note: '3 filas'
+}
+
+Table order_items {
+  id int [pk]
+  order_id int [not null]
+  product_id int [not null]
+  quantity int [not null]
+  price decimal [not null]
+
+  Indexes {
+    (id) [pk]
+  }
+
+  Note: '5 filas'
+}
+
+// Relaciones
+
+// N:1 relationships
+Ref: orders.customer_id > customers.id // Relación existente en el esquema
+
+
+// Estadísticas del esquema
+// Total de tablas: 5
+// Total de columnas: 21
+// Total de relaciones: 1
+
+// Para visualizar este diagrama:
+// 1. Copia todo este código
+// 2. Ve a https://dbdiagram.io/d
+// 3. Pega el código en el editor
+// 4. ¡Disfruta tu diagrama ER!
