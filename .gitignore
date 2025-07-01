@@ -1,0 +1,17 @@
+# Entorno virtual
+venv/
+entorno/
+env/
+
+# Cachés de Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Archivos de configuración
+.DS_Store
+.env
+
+# Salidas
+*.log
+*.tmp
