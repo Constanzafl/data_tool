@@ -6,15 +6,18 @@ Herramienta completa para analizar esquemas de bases de datos, detectar relacion
 
 ### 1. Crear entorno virtual
 ```bash
-python -m venv schema_analyzer_env
-source schema_analyzer_env/bin/activate  # Linux/Mac
+python -m entorno
+source entorno/bin/activate  # Linux/Mac
 # o
-schema_analyzer_env\Scripts\activate  # Windows
+entorno\Scripts\activate  # Windows
 ```
 
 ### 2. Instalar dependencias
 ```bash
 pip install pandas numpy scikit-learn sentence-transformers psycopg2-binary requests tqdm python-dotenv
+o
+ pip install -r requirements.txt
+ pip install ollama
 ```
 
 ### 3. (Opcional) Instalar Ollama para verificación con LLM
