@@ -1,0 +1,25 @@
+# Dependencias completas para Schema Analyzer
+# Herramienta de análisis de esquemas y generación de diagramas ER
+
+# Core
+pandas>=1.5.0
+numpy>=1.23.0
+python-dotenv>=1.0.0
+
+# Para detección de relaciones con embeddings
+sentence-transformers>=2.2.0
+scikit-learn>=1.2.0
+
+# Para bases de datos
+psycopg2-binary>=2.9.0  # PostgreSQL
+# sqlite3 viene incluido en Python
+
+# Para interacción con Ollama (LLM local)
+requests>=2.28.0
+
+# Utilidades
+tqdm>=4.65.0  # Barras de progreso
+
+# Opcional: Para exportar a otros formatos
+openpyxl>=3.1.0  # Excel
+# matplotlib>=3.6.0  # Gráficos (si quieres visualizaciones)
